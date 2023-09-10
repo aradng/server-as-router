@@ -1,0 +1,9 @@
+*.log
+*.csv
+*.egg-info
+__pycache__
+sandbox
+*.pyo
+*.pyc
+.venv
+.vscode

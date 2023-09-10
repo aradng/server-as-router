@@ -1,0 +1,11 @@
+[Unit]
+Description=add table and default route to match fwmark
+After=network.target
+After=network-online.target
+
+[Service]
+ExecStart=/etc/network/static-routes.sh
+
+[Install]
+WantedBy=multi-user.target
+
