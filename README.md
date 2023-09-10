@@ -8,7 +8,8 @@ Requires `python3`, `ipset`, `iptables` \
 replace all instances of `ipset_net` and `code` inside ip2loc.py and commands and bash_scripts
 ### Country Forwarding
 ```shell
-# create and flush ipset network with name ipset_net & populate with ip2location filtered country list matching code
+# create and flush ipset network with name `ipset_net`
+# populate with ip2location filtered country list matching `code`
 python3 ip2loc.py
 
 # ip and iptables rules for static routing
