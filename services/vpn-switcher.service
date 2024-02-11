@@ -1,0 +1,13 @@
+[Unit]
+Description=VPN Switcher Service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=aradng
+ExecStart=uvicorn ~/server-as-router/services/switch-server:app --reload --host 0.0.0.0 --port 8000
+
+[Install]
+WantedBy=multi-user.target
