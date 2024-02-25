@@ -12,8 +12,9 @@ replace all instances of `ipset_net` and `code` inside ip2loc.py and commands an
 # populate with ip2location filtered country list matching `code`
 python3 ip2loc.py
 
-# ip and iptables rules for static routing
+# iptables rules for static routing
 iptables -t mangle -A PREROUTING -m set --match-set [ipset_net] dst -j MARK --set-mark 100
+iptables -t nat -A POSTROUTING -o [default_interface_name] -j MASQUERADE
 
 # create table to match fwmark
 ip rule add fwmark 100 table iran_table priority 100
